@@ -11,7 +11,7 @@ for _p in range(1, 21):
     _f = _s.find_all("article", class_="col-sm-6", recursive=True)
     for i in _f:
         recipe_pages.append(i.contents[1].attrs["href"])
-        
+
 _k = 0
 for recipe_page in recipe_pages:
     _pc = request.urlopen(request.Request(recipe_page, headers={'User-Agent': 'Mozilla'})).read()
