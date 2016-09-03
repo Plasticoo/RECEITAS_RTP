@@ -59,5 +59,5 @@ for _p in urls:
     with open("output/" + "tvi_" + str(_k) + "_" + _t[0].text.replace(' ', '_') + ".txt", "w") as f:
         f.write(_t[0].text + "\n\n")
         f.write(_f[0].text)
-        print("Wrote {}.".format(_t))
+        print("Wrote {}.".format(_t[0]))
     _k += 1
