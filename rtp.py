@@ -17,7 +17,7 @@ for recipe_page in recipe_pages:
     _ss = BeautifulSoup(_pc, "html.parser")
     _t = _ss.find("title").getText().replace('|', '').replace('Praça', '').replace('RTP', '').rstrip().replace(' ', '_')
     _ff = _ss.find("div", class_="entry-content").getText()
-    with open("output/" + str(_k) + "_" + _t + ".txt", "w") as f:
+    with open("output/" + "rtp_" + str(_k) + "_" + _t + ".txt", "w") as f:
         f.write(_t.replace('_', ' ') + "\n")
         f.write(_ff)
         print("Wrote {}.".format(_t))
