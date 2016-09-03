@@ -56,8 +56,8 @@ for _p in urls:
     _s = BeautifulSoup(_pc, "html.parser")
     _f = _s.find_all("div", class_="artigo-text", recursive=True)
     _t = _s.find_all("h1")
-    with open("output/" + "tvi_" + str(_k) + "_" + _t[0].text + ".txt", "w") as f:
-        f.write(_t + "\n")
-        f.write(_f)
+    with open("output/" + "tvi_" + str(_k) + "_" + _t[0].text.replace(' ', '_') + ".txt", "w") as f:
+        f.write(_t[0].text + "\n\n")
+        f.write(_f[0].text)
         print("Wrote {}.".format(_t))
     _k += 1
